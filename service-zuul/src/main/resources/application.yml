@@ -12,7 +12,7 @@ zuul:
     api-a:
       path: /bjdfyh/**
       serviceId: bjdfyh
-      #stripPrefix: false
+      stripPrefix: false
     api-b:
       path: /service-hi/**
       serviceId: service-hi
