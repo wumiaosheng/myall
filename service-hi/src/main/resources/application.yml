@@ -1,0 +1,32 @@
+server:
+  port: 8762
+  context-path: /service-hi
+spring:
+  application:
+    name: service-hi
+  zipkin:
+    base-url: http://localhost:9411
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      
+  instance: 
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true      
+      
+# feign配置
+feign:
+  hystrix:
+    # 在feign中开启hystrix功能，默认情况下feign不开启hystrix功能
+    enabled: true
+#配置 Hystrix Dashboard
+management:
+  server:
+    port: 9002
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: '*'        
