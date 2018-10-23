@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neo.hapi.dao.HapSystemDao">
+	<select id="findByPage" resultType="com.neo.hapi.entity.HapSystem">
+		select * from hap_system
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="sysname != null">
+				and SYSNAME like #{sysname}
+			</if>
+			<if test="description != null">
+				and DESCRIPTION like #{description}
+			</if>
+			<if test="rooturi != null">
+				and ROOTURI like #{rooturi}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="findByMap" resultType="com.neo.hapi.entity.HapSystem">
+		select * from hap_system
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="sysname != null">
+				and SYSNAME like #{sysname}
+			</if>
+			<if test="description != null">
+				and DESCRIPTION like #{description}
+			</if>
+			<if test="rooturi != null">
+				and ROOTURI like #{rooturi}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="find" resultType="com.neo.hapi.entity.HapSystem">
+		select a.ID as ID, a.SYSNAME as SYSNAME, a.DESCRIPTION as DESCRIPTION, a.ROOTURI as ROOTURI, a.CREATE_TIME as CREATE_TIME, a.CREATE_USER_ID as CREATE_USER_ID, a.UPDATE_TIME as UPDATE_TIME, a.UPDATE_USER_ID as UPDATE_USER_ID from hap_system a
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="sysname != null">
+				and SYSNAME like #{sysname}
+			</if>
+			<if test="description != null">
+				and DESCRIPTION like #{description}
+			</if>
+			<if test="rooturi != null">
+				and ROOTURI like #{rooturi}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+</mapper>

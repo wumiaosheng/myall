@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.neo</groupId>
-    <artifactId>sc-f-chapter</artifactId>
+    <artifactId>myall</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     
-    <name>sc-f-chapter</name>
+    <name>myall</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -21,7 +21,7 @@
     <modules>
      <module>eureka-server</module>
      <module>service-hi</module>
-     <module>bjdfyh</module>
+     <module>my_dfyh</module>
 	 <module>service-zuul</module>
 	 <module>service-turbine</module>
     </modules>

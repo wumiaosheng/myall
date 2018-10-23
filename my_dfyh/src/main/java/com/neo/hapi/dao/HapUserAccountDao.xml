@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neo.hapi.dao.HapUserAccountDao">
+	<select id="findByPage" resultType="com.neo.hapi.entity.HapUserAccount">
+		select * from hap_user_account
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="enable != null">
+				and ENABLE = #{enable}
+			</if>
+			<if test="account != null">
+				and ACCOUNT like #{account}
+			</if>
+			<if test="password != null">
+				and PASSWORD like #{password}
+			</if>
+			<if test="accountType != null">
+				and ACCOUNT_TYPE = #{accountType}
+			</if>
+			<if test="lastloginip != null">
+				and LASTLOGINIP like #{lastloginip}
+			</if>
+			<if test="passquestion != null">
+				and PASSQUESTION like #{passquestion}
+			</if>
+			<if test="passanswer != null">
+				and PASSANSWER like #{passanswer}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="delflag != null">
+				and DELFLAG = #{delflag}
+			</if>
+			<if test="createorgid != null and createorgid != 0">
+				and CREATEORGID = #{createorgid}
+			</if>
+			<if test="memo != null">
+				and MEMO like #{memo}
+			</if>
+			<if test="temp1 != null">
+				and TEMP1 like #{temp1}
+			</if>
+			<if test="temp2 != null">
+				and TEMP2 like #{temp2}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="findByMap" resultType="com.neo.hapi.entity.HapUserAccount">
+		select * from hap_user_account
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="enable != null">
+				and ENABLE = #{enable}
+			</if>
+			<if test="account != null">
+				and ACCOUNT like #{account}
+			</if>
+			<if test="password != null">
+				and PASSWORD like #{password}
+			</if>
+			<if test="accountType != null">
+				and ACCOUNT_TYPE = #{accountType}
+			</if>
+			<if test="lastloginip != null">
+				and LASTLOGINIP like #{lastloginip}
+			</if>
+			<if test="passquestion != null">
+				and PASSQUESTION like #{passquestion}
+			</if>
+			<if test="passanswer != null">
+				and PASSANSWER like #{passanswer}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="delflag != null">
+				and DELFLAG = #{delflag}
+			</if>
+			<if test="createorgid != null and createorgid != 0">
+				and CREATEORGID = #{createorgid}
+			</if>
+			<if test="memo != null">
+				and MEMO like #{memo}
+			</if>
+			<if test="temp1 != null">
+				and TEMP1 like #{temp1}
+			</if>
+			<if test="temp2 != null">
+				and TEMP2 like #{temp2}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="find" resultType="com.neo.hapi.entity.HapUserAccount">
+		select a.ID as ID, a.ENABLE as ENABLE, a.ACCOUNT as ACCOUNT, a.PASSWORD as PASSWORD, a.STARTTIME as STARTTIME, a.ENDTIME as ENDTIME, a.ACCOUNT_TYPE as ACCOUNT_TYPE, a.LASTLOGINDATE as LASTLOGINDATE, a.LASTLOGINIP as LASTLOGINIP, a.PASSQUESTION as PASSQUESTION, a.PASSANSWER as PASSANSWER, a.CREATE_TIME as CREATE_TIME, a.CREATE_USER_ID as CREATE_USER_ID, a.UPDATE_USER_ID as UPDATE_USER_ID, a.UPDATE_TIME as UPDATE_TIME, a.DELFLAG as DELFLAG, a.CREATEORGID as CREATEORGID, a.MEMO as MEMO, a.TEMP1 as TEMP1, a.TEMP2 as TEMP2 from hap_user_account a
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="enable != null">
+				and ENABLE = #{enable}
+			</if>
+			<if test="account != null">
+				and ACCOUNT like #{account}
+			</if>
+			<if test="password != null">
+				and PASSWORD like #{password}
+			</if>
+			<if test="accountType != null">
+				and ACCOUNT_TYPE = #{accountType}
+			</if>
+			<if test="lastloginip != null">
+				and LASTLOGINIP like #{lastloginip}
+			</if>
+			<if test="passquestion != null">
+				and PASSQUESTION like #{passquestion}
+			</if>
+			<if test="passanswer != null">
+				and PASSANSWER like #{passanswer}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="delflag != null">
+				and DELFLAG = #{delflag}
+			</if>
+			<if test="createorgid != null and createorgid != 0">
+				and CREATEORGID = #{createorgid}
+			</if>
+			<if test="memo != null">
+				and MEMO like #{memo}
+			</if>
+			<if test="temp1 != null">
+				and TEMP1 like #{temp1}
+			</if>
+			<if test="temp2 != null">
+				and TEMP2 like #{temp2}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+</mapper>

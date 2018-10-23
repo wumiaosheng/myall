@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neo.hapi.dao.HapOrgLinkDao">
+	<select id="findByPage" resultType="com.neo.hapi.entity.HapOrgLink">
+		select * from hap_org_link
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="parent != null and parent != 0">
+				and PARENT = #{parent}
+			</if>
+			<if test="child != null and child != 0">
+				and CHILD = #{child}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="findByMap" resultType="com.neo.hapi.entity.HapOrgLink">
+		select * from hap_org_link
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="parent != null and parent != 0">
+				and PARENT = #{parent}
+			</if>
+			<if test="child != null and child != 0">
+				and CHILD = #{child}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="find" resultType="com.neo.hapi.entity.HapOrgLink">
+		select a.ID as ID, a.PARENT as PARENT, a.CHILD as CHILD from hap_org_link a
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="parent != null and parent != 0">
+				and PARENT = #{parent}
+			</if>
+			<if test="child != null and child != 0">
+				and CHILD = #{child}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+</mapper>

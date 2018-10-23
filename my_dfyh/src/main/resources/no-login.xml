@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NoLogin>
+	<!-- Normal -->
+	<uri>*.html</uri>
+	<uri>*.css</uri>
+	<uri>*.png</uri>
+	<uri>*.jpg</uri>
+	<uri>*.ttf</uri>
+	<uri>*.js</uri>
+	<uri>*.woff</uri>
+	<uri>*.woff2</uri>
+	<uri>*.ico</uri>
+	<uri>*error</uri>
+
+	<!-- web -->
+	<uri>hapi/entry.do</uri>
+	<uri>hapi/logout.do</uri>
+	<uri>hapi/doLogin.do</uri>
+	<uri>hapi/doLoginSSO.do</uri>
+	<uri>hapi/account/toForgotPasswd.do</uri>
+	<uri>hapi/account/forgotPasswd.do</uri>
+	<uri>hapi/account/modifyPasswd.do</uri>
+	<uri>hapi/account/getImage.do</uri>
+	
+	<!-- mobile -->
+	<uri>user/verifycode/*</uri>
+	<uri>user/registercode/*</uri>
+	<uri>user/qQcode/*</uri>
+	<uri>user/regist</uri>
+	<uri>user/changePassword</uri>
+	<uri>user/login</uri>
+	<uri>user/appResume</uri>
+	<uri>file/upload</uri>
+	<uri>user/idcard/front</uri>
+	<uri>user/idcard/back</uri>
+	<uri>team/queryForHome</uri>
+	<uri>team/homeStatistic</uri>
+	<uri>project/query</uri>
+	<uri>projectType/queryAllTree</uri>
+	<uri>project/findById</uri>
+	<uri>code/query</uri>
+	<uri>org/findAll</uri>
+</NoLogin>

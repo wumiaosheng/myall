@@ -11,9 +11,9 @@
     <name>eureka-server</name>
     <description>Demo project for Spring Boot</description>
 
-    <parent>
+     <parent>
         <groupId>com.neo</groupId>
-        <artifactId>sc-f-chapter</artifactId>
+        <artifactId>myall</artifactId>
         <version>0.0.1-SNAPSHOT</version>
      </parent>
 

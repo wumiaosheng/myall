@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neo.hapi.dao.HapFunctionDao">
+	<select id="findByPage" resultType="com.neo.hapi.entity.HapFunction">
+		select * from hap_function
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if> 
+			<if test="funcname != null">
+				and FUNCNAME like #{funcname}
+			</if>
+			<if test="navurl != null">
+				and NAVURL like #{navurl}
+			</if>
+			<if test="funccode != null">
+				and FUNCCODE like #{funccode}
+			</if>
+			<if test="funcorder != null and funcorder != 0">
+				and FUNCORDER = #{funcorder}
+			</if>
+			<if test="systemId != null and systemId != 0">
+				and SYSTEM_ID = #{systemId}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="findByMap" resultType="com.neo.hapi.entity.HapFunction">
+		select * from hap_function
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="funcname != null">
+				and FUNCNAME like #{funcname}
+			</if>
+			<if test="navurl != null">
+				and NAVURL like #{navurl}
+			</if>
+			<if test="funccode != null">
+				and FUNCCODE like #{funccode}
+			</if>
+			<if test="funcorder != null and funcorder != 0">
+				and FUNCORDER = #{funcorder}
+			</if>
+			<if test="systemId != null and systemId != 0">
+				and SYSTEM_ID = #{systemId}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="find" resultType="com.neo.hapi.entity.HapFunction">
+		select a.ID as ID, a.FUNCNAME as FUNCNAME, a.NAVURL as NAVURL, a.FUNCCODE as FUNCCODE, a.FUNCORDER as FUNCORDER, a.SYSTEM_ID as SYSTEM_ID, a.CREATE_TIME as CREATE_TIME, a.CREATE_USER_ID as CREATE_USER_ID, a.UPDATE_TIME as UPDATE_TIME, a.UPDATE_USER_ID as UPDATE_USER_ID from hap_function a
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="funcname != null">
+				and FUNCNAME like #{funcname}
+			</if>
+			<if test="navurl != null">
+				and NAVURL like #{navurl}
+			</if>
+			<if test="funccode != null">
+				and FUNCCODE like #{funccode}
+			</if>
+			<if test="funcorder != null and funcorder != 0">
+				and FUNCORDER = #{funcorder}
+			</if>
+			<if test="systemId != null and systemId != 0">
+				and SYSTEM_ID = #{systemId}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+</mapper>

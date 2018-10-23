@@ -1,0 +1,93 @@
+﻿<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" th:href="@{/h-ui/css/H-ui.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/h-ui.admin/css/H-ui.admin.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/lib/Hui-iconfont/1.0.8/iconfont.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/h-ui.admin/skin/default/skin.css}" id="skin" />
+<link rel="stylesheet" type="text/css" th:href="@{/h-ui.admin/css/style.css}" />
+
+<link rel="stylesheet" type="text/css" th:href="@{/lib/jqgrid/css/ui.jqgrid.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/lib/jqgrid/css/jquery-ui-1.10.4.custom.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/animate.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+
+<link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
+
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>用户管理</title>
+</head>
+<body>
+<div class="page-container">
+  <div class="jqGrid_wrapper">
+	 <table id=roleTable></table>
+   </div>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" th:src="@{/lib/jquery/jquery-2.1.1.min.js}"></script> 
+<script type="text/javascript" th:src="@{/lib/layer/2.4/layer.js}"></script>
+<script type="text/javascript" th:src="@{/h-ui/js/H-ui.min.js}"></script> 
+<script type="text/javascript" th:src="@{/h-ui.admin/js/H-ui.admin.js}"></script> <!--/_footer 作为公共模版分离出去-->
+
+
+<!-- jqGrid start-->
+<script type="text/javascript" th:src="@{/lib/jqgrid/js/i18n/grid.locale-cn.js}"></script> 
+<script type="text/javascript" th:src="@{/lib/jqgrid/js/jquery.jqGrid.min.js}"></script> 
+<script type="text/javascript" th:src="@{/js/jquery-ui.min.js}"></script>
+<!-- jqGrid end-->
+<!--请在下方写此页面业务相关的脚本-->
+
+
+<script type="text/javascript" th:src="@{/resources/common.js}"></script> 
+<script th:inline="javascript">
+/*<![CDATA[*/
+var fillmaps =/*[[${_FILL_MAP}]]*/;
+var UserContext =/*[[${UserContext}]]*/;
+var _ctxPath =/*[[${ctxPath}]]*/;
+/*]]>*/
+
+</script>
+ <script type="text/javascript">
+ var colNames=['编号','角色名称','角色编码','状态','描述','有效期','场景'];
+ var colMode=[
+		{name:'id',index:'id'},
+		{name:'rolename',index:'rolename'},
+		{name:'rolecode',index:'rolecode'},
+		{name:'status',index:'status'},
+		{name:'description',index:'description'},
+		{name:'effectTime',index:'effectTime'},
+		{name:'scenarioName',index:'scenarioName'},
+		
+	];
+ 
+ $(function(){
+	 $("#roleTable").grid(
+				{
+					url :_ctxPath+"/role/query",
+					colNames:colNames,
+					autowidth: true,
+					shrinkToFit: true,
+					colModel : colMode,
+					multiselect:true,
+					autoCode:false,
+					multiboxonly:true
+				}); 
+		
+ })
+</script> 
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neo.hapi.dao.HapMenuDao">
+	<select id="findByPage" resultType="com.neo.hapi.entity.HapMenu">
+		select * from hap_menu
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="parentid != null and parentid != 0">
+				and PARENTID = #{parentid}
+			</if>
+			<if test="systemId != null and systemId != 0">
+				and SYSTEM_ID = #{systemId}
+			</if>
+			<if test="menuname != null">
+				and MENUNAME like #{menuname}
+			</if>
+			<if test="menuurl != null">
+				and menuurl like #{menuurl}
+			</if>
+			<if test="funccode != null">
+				and FUNCCODE like #{funccode}
+			</if>
+			<if test="menulevel != null and menulevel != 0">
+				and MENULEVEL = #{menulevel}
+			</if>
+			<if test="levelcode != null">
+				and LEVELCODE like #{levelcode}
+			</if>
+			<if test="menuorder != null and menuorder != 0">
+				and MENUORDER = #{menuorder}
+			</if>
+			<if test="navurl != null">
+				and NAVURL like #{navurl}
+			</if>
+			<if test="iconurl != null">
+				and ICONURL like #{iconurl}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="findByMap" resultType="com.neo.hapi.entity.HapMenu">
+		select * from hap_menu
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="parentid != null and parentid != 0">
+				and PARENTID = #{parentid}
+			</if>
+			<if test="systemId != null and systemId != 0">
+				and SYSTEM_ID = #{systemId}
+			</if>
+			<if test="menuname != null">
+				and MENUNAME like #{menuname}
+			</if>
+			<if test="menuurl != null">
+				and menuurl like #{menuurl}
+			</if>
+			<if test="funccode != null">
+				and FUNCCODE like #{funccode}
+			</if>
+			<if test="menulevel != null and menulevel != 0">
+				and MENULEVEL = #{menulevel}
+			</if>
+			<if test="levelcode != null">
+				and LEVELCODE like #{levelcode}
+			</if>
+			<if test="menuorder != null and menuorder != 0">
+				and MENUORDER = #{menuorder}
+			</if>
+			<if test="navurl != null">
+				and NAVURL like #{navurl}
+			</if>
+			<if test="iconurl != null">
+				and ICONURL like #{iconurl}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="find" resultType="com.neo.hapi.entity.HapMenu">
+		select a.ID as ID, a.PARENTID as PARENTID, a.SYSTEM_ID as SYSTEM_ID, a.MENUNAME as MENUNAME, a.menuurl as menuurl, a.FUNCCODE as FUNCCODE, a.MENULEVEL as MENULEVEL, a.LEVELCODE as LEVELCODE, a.MENUORDER as MENUORDER, a.NAVURL as NAVURL, a.ICONURL as ICONURL, a.CREATE_TIME as CREATE_TIME, a.CREATE_USER_ID as CREATE_USER_ID, a.UPDATE_TIME as UPDATE_TIME, a.UPDATE_USER_ID as UPDATE_USER_ID from hap_menu a
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="parentid != null and parentid != 0">
+				and PARENTID = #{parentid}
+			</if>
+			<if test="systemId != null and systemId != 0">
+				and SYSTEM_ID = #{systemId}
+			</if>
+			<if test="menuname != null">
+				and MENUNAME like #{menuname}
+			</if>
+			<if test="menuurl != null">
+				and menuurl like #{menuurl}
+			</if>
+			<if test="funccode != null">
+				and FUNCCODE like #{funccode}
+			</if>
+			<if test="menulevel != null and menulevel != 0">
+				and MENULEVEL = #{menulevel}
+			</if>
+			<if test="levelcode != null">
+				and LEVELCODE like #{levelcode}
+			</if>
+			<if test="menuorder != null and menuorder != 0">
+				and MENUORDER = #{menuorder}
+			</if>
+			<if test="navurl != null">
+				and NAVURL like #{navurl}
+			</if>
+			<if test="iconurl != null">
+				and ICONURL like #{iconurl}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+</mapper>

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neo.hapi.dao.HapUserDao">
+	<select id="findByPage" resultType="com.neo.hapi.entity.HapUser">
+		select * from hap_user
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="username != null">
+				and USERNAME like #{username}
+			</if>
+			<if test="officeFax != null">
+				and OFFICE_FAX like #{officeFax}
+			</if>
+			<if test="officePhone != null">
+				and OFFICE_PHONE like #{officePhone}
+			</if>
+			<if test="phone != null">
+				and PHONE like #{phone}
+			</if>
+			<if test="email != null">
+				and EMAIL like #{email}
+			</if>
+			<if test="authcode != null">
+				and AUTHCODE like #{authcode}
+			</if>
+			<if test="equipmentid != null">
+				and EQUIPMENTID like #{equipmentid}
+			</if>
+			<if test="address != null">
+				and ADDRESS like #{address}
+			</if>
+			<if test="isdelete != null and isdelete != 0">
+				and ISDELETE = #{isdelete}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="userType != null">
+				and USER_TYPE = #{userType}
+			</if>
+			<if test="idcard != null">
+				and IDCARD like #{idcard}
+			</if>
+			<if test="clientIdsJson != null">
+				and CLIENT_IDS_JSON = #{clientIdsJson}
+			</if>
+			<if test="teamId != null and teamId != 0">
+				and TEAM_ID = #{teamId}
+			</if>
+			<if test="avatar != null">
+				and AVATAR like #{avatar}
+			</if>
+			<if test="sex != null">
+				and SEX like #{sex}
+			</if>
+			<if test="age != null and age != 0">
+				and AGE = #{age}
+			</if>
+			<if test="workAge != null and workAge != 0">
+				and WORK_AGE = #{workAge}
+			</if>
+			<if test="workerType != null">
+				and WORKER_TYPE like #{workerType}
+			</if>
+			<if test="idcardFront != null">
+				and IDCARD_FRONT like #{idcardFront}
+			</if>
+			<if test="idcardBack != null">
+				and IDCARD_BACK like #{idcardBack}
+			</if>
+			<if test="certs != null">
+				and CERTS = #{certs}
+			</if>
+			<if test="workHis != null">
+				and WORK_HIS = #{workHis}
+			</if>
+			<if test="cardNum != null">
+				and CARD_NUM like #{cardNum}
+			</if>
+			<if test="workCardNum != null">
+				and WORK_CARD_NUM like #{workCardNum}
+			</if>
+			<if test="hasInsurance != null">
+				and HAS_INSURANCE = #{hasInsurance}
+			</if>
+			<if test="isLeader != null">
+				and IS_LEADER = #{isLeader}
+			</if>
+			<if test="idcardNation != null">
+				and IDCARD_NATION like #{idcardNation}
+			</if>
+			<if test="idcardAddress != null">
+				and IDCARD_ADDRESS like #{idcardAddress}
+			</if>
+			<if test="idcardSignOrg != null">
+				and IDCARD_SIGN_ORG like #{idcardSignOrg}
+			</if>
+			<if test="workCardJson != null">
+				and WORK_CARD_JSON like #{workCardJson}
+			</if>
+			<if test="valid != null">
+				and VALID = #{valid}
+			</if>
+			<if test="prize != null">
+				and PRIZE = #{prize}
+			</if>
+			<if test="badRecord != null">
+				and BAD_RECORD = #{badRecord}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="findByMap" resultType="com.neo.hapi.entity.HapUser">
+		select * from hap_user
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="username != null">
+				and USERNAME like #{username}
+			</if>
+			<if test="officeFax != null">
+				and OFFICE_FAX like #{officeFax}
+			</if>
+			<if test="officePhone != null">
+				and OFFICE_PHONE like #{officePhone}
+			</if>
+			<if test="phone != null">
+				and PHONE like #{phone}
+			</if>
+			<if test="email != null">
+				and EMAIL like #{email}
+			</if>
+			<if test="authcode != null">
+				and AUTHCODE like #{authcode}
+			</if>
+			<if test="equipmentid != null">
+				and EQUIPMENTID like #{equipmentid}
+			</if>
+			<if test="address != null">
+				and ADDRESS like #{address}
+			</if>
+			<if test="isdelete != null and isdelete != 0">
+				and ISDELETE = #{isdelete}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="userType != null">
+				and USER_TYPE = #{userType}
+			</if>
+			<if test="idcard != null">
+				and IDCARD like #{idcard}
+			</if>
+			<if test="clientIdsJson != null">
+				and CLIENT_IDS_JSON = #{clientIdsJson}
+			</if>
+			<if test="teamId != null and teamId != 0">
+				and TEAM_ID = #{teamId}
+			</if>
+			<if test="avatar != null">
+				and AVATAR like #{avatar}
+			</if>
+			<if test="sex != null">
+				and SEX like #{sex}
+			</if>
+			<if test="age != null and age != 0">
+				and AGE = #{age}
+			</if>
+			<if test="workAge != null and workAge != 0">
+				and WORK_AGE = #{workAge}
+			</if>
+			<if test="workerType != null">
+				and WORKER_TYPE like #{workerType}
+			</if>
+			<if test="idcardFront != null">
+				and IDCARD_FRONT like #{idcardFront}
+			</if>
+			<if test="idcardBack != null">
+				and IDCARD_BACK like #{idcardBack}
+			</if>
+			<if test="certs != null">
+				and CERTS = #{certs}
+			</if>
+			<if test="workHis != null">
+				and WORK_HIS = #{workHis}
+			</if>
+			<if test="cardNum != null">
+				and CARD_NUM like #{cardNum}
+			</if>
+			<if test="workCardNum != null">
+				and WORK_CARD_NUM like #{workCardNum}
+			</if>
+			<if test="hasInsurance != null">
+				and HAS_INSURANCE = #{hasInsurance}
+			</if>
+			<if test="isLeader != null">
+				and IS_LEADER = #{isLeader}
+			</if>
+			<if test="idcardNation != null">
+				and IDCARD_NATION like #{idcardNation}
+			</if>
+			<if test="idcardAddress != null">
+				and IDCARD_ADDRESS like #{idcardAddress}
+			</if>
+			<if test="idcardSignOrg != null">
+				and IDCARD_SIGN_ORG like #{idcardSignOrg}
+			</if>
+			<if test="workCardJson != null">
+				and WORK_CARD_JSON like #{workCardJson}
+			</if>
+			<if test="valid != null">
+				and VALID = #{valid}
+			</if>
+			<if test="prize != null">
+				and PRIZE = #{prize}
+			</if>
+			<if test="badRecord != null">
+				and BAD_RECORD = #{badRecord}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="find" resultType="com.neo.hapi.entity.HapUser">
+		select a.ID as ID, a.USERNAME as USERNAME, a.OFFICE_FAX as OFFICE_FAX, a.OFFICE_PHONE as OFFICE_PHONE, a.PHONE as PHONE, a.EMAIL as EMAIL, a.AUTHCODE as AUTHCODE, a.AUTHCODETIME as AUTHCODETIME, a.EQUIPMENTID as EQUIPMENTID, a.ADDRESS as ADDRESS, a.ISDELETE as ISDELETE, a.CREATE_TIME as CREATE_TIME, a.CREATE_USER_ID as CREATE_USER_ID, a.UPDATE_TIME as UPDATE_TIME, a.UPDATE_USER_ID as UPDATE_USER_ID, a.USER_TYPE as USER_TYPE, a.IDCARD as IDCARD, a.CLIENT_IDS_JSON as CLIENT_IDS_JSON, a.TEAM_ID as TEAM_ID, a.AVATAR as AVATAR, a.SEX as SEX, a.AGE as AGE, a.WORK_AGE as WORK_AGE, a.WORKER_TYPE as WORKER_TYPE, a.IDCARD_FRONT as IDCARD_FRONT, a.IDCARD_BACK as IDCARD_BACK, a.CERTS as CERTS, a.WORK_HIS as WORK_HIS, a.CARD_NUM as CARD_NUM, a.WORK_CARD_NUM as WORK_CARD_NUM, a.HAS_INSURANCE as HAS_INSURANCE, a.IS_LEADER as IS_LEADER, a.IDCARD_NATION as IDCARD_NATION, a.IDCARD_ADDRESS as IDCARD_ADDRESS, a.IDCARD_BIRTHDAY as IDCARD_BIRTHDAY, a.IDCARD_SIGN_DATE as IDCARD_SIGN_DATE, a.IDCARD_EXPIRE_DATE as IDCARD_EXPIRE_DATE, a.IDCARD_SIGN_ORG as IDCARD_SIGN_ORG, a.WORK_CARD_JSON as WORK_CARD_JSON, a.VALID as VALID, a.PRIZE as PRIZE, a.BAD_RECORD as BAD_RECORD from hap_user a
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="username != null">
+				and USERNAME like #{username}
+			</if>
+			<if test="officeFax != null">
+				and OFFICE_FAX like #{officeFax}
+			</if>
+			<if test="officePhone != null">
+				and OFFICE_PHONE like #{officePhone}
+			</if>
+			<if test="phone != null">
+				and PHONE like #{phone}
+			</if>
+			<if test="email != null">
+				and EMAIL like #{email}
+			</if>
+			<if test="authcode != null">
+				and AUTHCODE like #{authcode}
+			</if>
+			<if test="equipmentid != null">
+				and EQUIPMENTID like #{equipmentid}
+			</if>
+			<if test="address != null">
+				and ADDRESS like #{address}
+			</if>
+			<if test="isdelete != null and isdelete != 0">
+				and ISDELETE = #{isdelete}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="userType != null">
+				and USER_TYPE = #{userType}
+			</if>
+			<if test="idcard != null">
+				and IDCARD like #{idcard}
+			</if>
+			<if test="clientIdsJson != null">
+				and CLIENT_IDS_JSON = #{clientIdsJson}
+			</if>
+			<if test="teamId != null and teamId != 0">
+				and TEAM_ID = #{teamId}
+			</if>
+			<if test="avatar != null">
+				and AVATAR like #{avatar}
+			</if>
+			<if test="sex != null">
+				and SEX like #{sex}
+			</if>
+			<if test="age != null and age != 0">
+				and AGE = #{age}
+			</if>
+			<if test="workAge != null and workAge != 0">
+				and WORK_AGE = #{workAge}
+			</if>
+			<if test="workerType != null">
+				and WORKER_TYPE like #{workerType}
+			</if>
+			<if test="idcardFront != null">
+				and IDCARD_FRONT like #{idcardFront}
+			</if>
+			<if test="idcardBack != null">
+				and IDCARD_BACK like #{idcardBack}
+			</if>
+			<if test="certs != null">
+				and CERTS = #{certs}
+			</if>
+			<if test="workHis != null">
+				and WORK_HIS = #{workHis}
+			</if>
+			<if test="cardNum != null">
+				and CARD_NUM like #{cardNum}
+			</if>
+			<if test="workCardNum != null">
+				and WORK_CARD_NUM like #{workCardNum}
+			</if>
+			<if test="hasInsurance != null">
+				and HAS_INSURANCE = #{hasInsurance}
+			</if>
+			<if test="isLeader != null">
+				and IS_LEADER = #{isLeader}
+			</if>
+			<if test="idcardNation != null">
+				and IDCARD_NATION like #{idcardNation}
+			</if>
+			<if test="idcardAddress != null">
+				and IDCARD_ADDRESS like #{idcardAddress}
+			</if>
+			<if test="idcardSignOrg != null">
+				and IDCARD_SIGN_ORG like #{idcardSignOrg}
+			</if>
+			<if test="workCardJson != null">
+				and WORK_CARD_JSON like #{workCardJson}
+			</if>
+			<if test="valid != null">
+				and VALID = #{valid}
+			</if>
+			<if test="prize != null">
+				and PRIZE = #{prize}
+			</if>
+			<if test="badRecord != null">
+				and BAD_RECORD = #{badRecord}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+</mapper>

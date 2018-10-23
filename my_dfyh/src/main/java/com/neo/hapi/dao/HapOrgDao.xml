@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neo.hapi.dao.HapOrgDao">
+	<select id="findByPage" resultType="com.neo.hapi.entity.HapOrg">
+		select * from hap_org
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if> 
+			<if test="orgname != null">
+				and ORGNAME like #{orgname}
+			</if>
+			<if test="orgabbr != null">
+				and ORGABBR like #{orgabbr}
+			</if>
+			<if test="orgcode != null">
+				and ORGCODE like #{orgcode}
+			</if>
+			<if test="levelcode != null">
+				and LEVELCODE like #{levelcode}
+			</if>
+			<if test="orglevel != null and orglevel != 0">
+				and ORGLEVEL = #{orglevel}
+			</if>
+			<if test="orgorder != null and orgorder != 0">
+				and ORGORDER = #{orgorder}
+			</if>
+			<if test="contact != null">
+				and CONTACT like #{contact}
+			</if>
+			<if test="description != null">
+				and DESCRIPTION like #{description}
+			</if>
+			<if test="parentid != null and parentid != 0">
+				and PARENTID = #{parentid}
+			</if>
+			<if test="orgtype != null">
+				and ORGTYPE = #{orgtype}
+			</if>
+			<if test="region != null">
+				and REGION like #{region}
+			</if>
+			<if test="version != null">
+				and VERSION like #{version}
+			</if>
+			<if test="isdelete != null and isdelete != 0">
+				and ISDELETE = #{isdelete}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="createorgid != null and createorgid != 0">
+				and CREATEORGID = #{createorgid}
+			</if>
+			<if test="temp1 != null">
+				and TEMP1 like #{temp1}
+			</if>
+			<if test="temp2 != null">
+				and TEMP2 like #{temp2}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="findByMap" resultType="com.neo.hapi.entity.HapOrg">
+		select * from hap_org
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="orgname != null">
+				and ORGNAME like #{orgname}
+			</if>
+			<if test="orgabbr != null">
+				and ORGABBR like #{orgabbr}
+			</if>
+			<if test="orgcode != null">
+				and ORGCODE like #{orgcode}
+			</if>
+			<if test="levelcode != null">
+				and LEVELCODE like #{levelcode}
+			</if>
+			<if test="orglevel != null and orglevel != 0">
+				and ORGLEVEL = #{orglevel}
+			</if>
+			<if test="orgorder != null and orgorder != 0">
+				and ORGORDER = #{orgorder}
+			</if>
+			<if test="contact != null">
+				and CONTACT like #{contact}
+			</if>
+			<if test="description != null">
+				and DESCRIPTION like #{description}
+			</if>
+			<if test="parentid != null and parentid != 0">
+				and PARENTID = #{parentid}
+			</if>
+			<if test="orgtype != null">
+				and ORGTYPE = #{orgtype}
+			</if>
+			<if test="region != null">
+				and REGION like #{region}
+			</if>
+			<if test="version != null">
+				and VERSION like #{version}
+			</if>
+			<if test="isdelete != null and isdelete != 0">
+				and ISDELETE = #{isdelete}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="createorgid != null and createorgid != 0">
+				and CREATEORGID = #{createorgid}
+			</if>
+			<if test="temp1 != null">
+				and TEMP1 like #{temp1}
+			</if>
+			<if test="temp2 != null">
+				and TEMP2 like #{temp2}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="find" resultType="com.neo.hapi.entity.HapOrg">
+		select a.ID as ID, a.ORGNAME as ORGNAME, a.ORGABBR as ORGABBR, a.ORGCODE as ORGCODE, a.LEVELCODE as LEVELCODE, a.ORGLEVEL as ORGLEVEL, a.ORGORDER as ORGORDER, a.CONTACT as CONTACT, a.DESCRIPTION as DESCRIPTION, a.PARENTID as PARENTID, a.ORGTYPE as ORGTYPE, a.REGION as REGION, a.VERSION as VERSION, a.ISDELETE as ISDELETE, a.CREATE_TIME as CREATE_TIME, a.CREATE_USER_ID as CREATE_USER_ID, a.UPDATE_USER_ID as UPDATE_USER_ID, a.UPDATE_TIME as UPDATE_TIME, a.CREATEORGID as CREATEORGID, a.TEMP1 as TEMP1, a.TEMP2 as TEMP2 from hap_org a
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="orgname != null">
+				and ORGNAME like #{orgname}
+			</if>
+			<if test="orgabbr != null">
+				and ORGABBR like #{orgabbr}
+			</if>
+			<if test="orgcode != null">
+				and ORGCODE like #{orgcode}
+			</if>
+			<if test="levelcode != null">
+				and LEVELCODE like #{levelcode}
+			</if>
+			<if test="orglevel != null and orglevel != 0">
+				and ORGLEVEL = #{orglevel}
+			</if>
+			<if test="orgorder != null and orgorder != 0">
+				and ORGORDER = #{orgorder}
+			</if>
+			<if test="contact != null">
+				and CONTACT like #{contact}
+			</if>
+			<if test="description != null">
+				and DESCRIPTION like #{description}
+			</if>
+			<if test="parentid != null and parentid != 0">
+				and PARENTID = #{parentid}
+			</if>
+			<if test="orgtype != null">
+				and ORGTYPE = #{orgtype}
+			</if>
+			<if test="region != null">
+				and REGION like #{region}
+			</if>
+			<if test="version != null">
+				and VERSION like #{version}
+			</if>
+			<if test="isdelete != null and isdelete != 0">
+				and ISDELETE = #{isdelete}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="createorgid != null and createorgid != 0">
+				and CREATEORGID = #{createorgid}
+			</if>
+			<if test="temp1 != null">
+				and TEMP1 like #{temp1}
+			</if>
+			<if test="temp2 != null">
+				and TEMP2 like #{temp2}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+</mapper>

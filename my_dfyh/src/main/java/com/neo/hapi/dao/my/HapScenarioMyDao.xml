@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neo.hapi.dao.my.HapScenarioMyDao">
+	<select id="findByPage" resultType="com.neo.hapi.entity.HapScenario">
+		select hs.*,(SELECT ht.TEMPLATENAME from hap_template ht where ht.id=hs.TEMPATE_ID)as templatename ^ from hap_scenario hs
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="scenename != null">
+				and SCENENAME like #{scenename}
+			</if>
+			<if test="tempateId != null and tempateId != 0">
+				and TEMPATE_ID = #{tempateId}
+			</if>
+			<if test="description != null">
+				and DESCRIPTION like #{description}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	
+</mapper>

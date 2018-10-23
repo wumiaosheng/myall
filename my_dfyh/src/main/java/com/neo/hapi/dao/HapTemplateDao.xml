@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neo.hapi.dao.HapTemplateDao">
+	<select id="findByPage" resultType="com.neo.hapi.entity.HapTemplate">
+		select * from hap_template
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="templatename != null">
+				and TEMPLATENAME like #{templatename}
+			</if>
+			<if test="indexUrl != null">
+				and INDEX_URL like #{indexUrl}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="pictureUrl != null">
+				and PICTURE_URL like #{pictureUrl}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="findByMap" resultType="com.neo.hapi.entity.HapTemplate">
+		select * from hap_template
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="templatename != null">
+				and TEMPLATENAME like #{templatename}
+			</if>
+			<if test="indexUrl != null">
+				and INDEX_URL like #{indexUrl}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="pictureUrl != null">
+				and PICTURE_URL like #{pictureUrl}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="find" resultType="com.neo.hapi.entity.HapTemplate">
+		select a.ID as ID, a.TEMPLATENAME as TEMPLATENAME, a.INDEX_URL as INDEX_URL, a.CREATE_TIME as CREATE_TIME, a.CREATE_USER_ID as CREATE_USER_ID, a.UPDATE_USER_ID as UPDATE_USER_ID, a.UPDATE_TIME as UPDATE_TIME, a.PICTURE_URL as PICTURE_URL from hap_template a
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="templatename != null">
+				and TEMPLATENAME like #{templatename}
+			</if>
+			<if test="indexUrl != null">
+				and INDEX_URL like #{indexUrl}
+			</if>
+			<if test="createUserId != null and createUserId != 0">
+				and CREATE_USER_ID = #{createUserId}
+			</if>
+			<if test="updateUserId != null and updateUserId != 0">
+				and UPDATE_USER_ID = #{updateUserId}
+			</if>
+			<if test="pictureUrl != null">
+				and PICTURE_URL like #{pictureUrl}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+</mapper>

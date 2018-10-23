@@ -1,0 +1,52 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /bjdfyh
+
+spring:
+  application:
+    name: bjdfyh  
+  
+  thymeleaf:
+    mode: HTML5
+    encoding: utf-8
+    content-type: text/html
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    check-template-location: true
+  
+  zipkin:
+    base-url: http://localhost:9411
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance: 
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
+    
+# feign配置
+feign:
+  hystrix:
+    # 在feign中开启hystrix功能，默认情况下feign不开启hystrix功能
+    enabled: true
+
+#配置 Hystrix Dashboard
+management:
+  server:
+    port: 9001
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: '*' 
+            
+#web.upload-path=/temp/upload/
+#spring.mvc.static-path-pattern=/**
+#spring.resources.static-locations=classpath:/META-INF/resources/,classpath:/resources/,\
+#classpath:/static/,classpath:/public/,file:${web.upload-path}        
+        
+        
+          

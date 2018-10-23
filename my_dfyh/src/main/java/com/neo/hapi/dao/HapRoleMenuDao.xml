@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neo.hapi.dao.HapRoleMenuDao">
+	<select id="findByPage" resultType="com.neo.hapi.entity.HapRoleMenu">
+		select * from hap_role_menu
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="roleId != null and roleId != 0">
+				and ROLE_ID = #{roleId}
+			</if>
+			<if test="menuId != null and menuId != 0">
+				and MENU_ID = #{menuId}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="findByMap" resultType="com.neo.hapi.entity.HapRoleMenu">
+		select * from hap_role_menu
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="roleId != null and roleId != 0">
+				and ROLE_ID = #{roleId}
+			</if>
+			<if test="menuId != null and menuId != 0">
+				and MENU_ID = #{menuId}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+	<select id="find" resultType="com.neo.hapi.entity.HapRoleMenu">
+		select a.ID as ID, a.ROLE_ID as ROLE_ID, a.MENU_ID as MENU_ID from hap_role_menu a
+		<where>
+			<if test="id != null and id != 0">
+				and ID = #{id}
+			</if>
+			<if test="roleId != null and roleId != 0">
+				and ROLE_ID = #{roleId}
+			</if>
+			<if test="menuId != null and menuId != 0">
+				and MENU_ID = #{menuId}
+			</if>
+			<if test="mywhere != null">
+				and ${mywhere}
+			</if>
+		</where>
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</select>
+</mapper>
