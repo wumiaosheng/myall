@@ -13,7 +13,6 @@ import com.netflix.zuul.context.RequestContext;
 public class MyFilter extends ZuulFilter {
 
     private static Logger log = LoggerFactory.getLogger(MyFilter.class);
-    
     ///pre：路由之前routing：路由之时 post： 路由之后  error：发送错误调用
     @Override
     public String filterType() {
